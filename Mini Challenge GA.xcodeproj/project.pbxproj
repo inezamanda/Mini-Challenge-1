@@ -7,17 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4659C92C27FE04A50087BF17 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659C92A27FE04A50087BF17 /* ReportTableViewCell.swift */; };
+		4659C92D27FE04A50087BF17 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4659C92B27FE04A50087BF17 /* ReportTableViewCell.xib */; };
+		4659C93127FE7C1F0087BF17 /* ProjectCompletionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659C92F27FE7C1F0087BF17 /* ProjectCompletionTableViewCell.swift */; };
+		4659C93227FE7C1F0087BF17 /* ProjectCompletionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4659C93027FE7C1F0087BF17 /* ProjectCompletionTableViewCell.xib */; };
+		4659C93627FF16790087BF17 /* CompletionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659C93427FF16790087BF17 /* CompletionHistoryTableViewCell.swift */; };
+		4659C93727FF16790087BF17 /* CompletionHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4659C93527FF16790087BF17 /* CompletionHistoryTableViewCell.xib */; };
+		4659C93927FF1D7D0087BF17 /* ProgressHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659C93827FF1D7D0087BF17 /* ProgressHistoryViewController.swift */; };
+		4659C93C27FF32520087BF17 /* EmptyHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659C93A27FF32520087BF17 /* EmptyHistoryTableViewCell.swift */; };
+		4659C93D27FF32520087BF17 /* EmptyHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4659C93B27FF32520087BF17 /* EmptyHistoryTableViewCell.xib */; };
 		46A8ADEE27FBE7310047ABDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8ADED27FBE7310047ABDD /* AppDelegate.swift */; };
 		46A8ADF027FBE7310047ABDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8ADEF27FBE7310047ABDD /* SceneDelegate.swift */; };
 		46A8ADF227FBE7310047ABDD /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8ADF127FBE7310047ABDD /* SummaryViewController.swift */; };
 		46A8ADF527FBE7310047ABDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A8ADF327FBE7310047ABDD /* Main.storyboard */; };
 		46A8ADF727FBE7320047ABDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46A8ADF627FBE7320047ABDD /* Assets.xcassets */; };
 		46A8ADFA27FBE7320047ABDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A8ADF827FBE7320047ABDD /* LaunchScreen.storyboard */; };
-		46A8AE0527FBF7680047ABDD /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8AE0427FBF7680047ABDD /* Progress.swift */; };
-		46B3176627FD024100DAF63E /* ProgressTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3176527FD024100DAF63E /* ProgressTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4659C92A27FE04A50087BF17 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
+		4659C92B27FE04A50087BF17 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
+		4659C92F27FE7C1F0087BF17 /* ProjectCompletionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCompletionTableViewCell.swift; sourceTree = "<group>"; };
+		4659C93027FE7C1F0087BF17 /* ProjectCompletionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCompletionTableViewCell.xib; sourceTree = "<group>"; };
+		4659C93427FF16790087BF17 /* CompletionHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		4659C93527FF16790087BF17 /* CompletionHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletionHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		4659C93827FF1D7D0087BF17 /* ProgressHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHistoryViewController.swift; sourceTree = "<group>"; };
+		4659C93A27FF32520087BF17 /* EmptyHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		4659C93B27FF32520087BF17 /* EmptyHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		46A8ADEA27FBE7310047ABDD /* Mini Challenge GA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Challenge GA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A8ADED27FBE7310047ABDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46A8ADEF27FBE7310047ABDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,8 +42,6 @@
 		46A8ADF627FBE7320047ABDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46A8ADF927FBE7320047ABDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46A8ADFB27FBE7320047ABDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46A8AE0427FBF7680047ABDD /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
-		46B3176527FD024100DAF63E /* ProgressTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4659C92E27FE7BE00087BF17 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				46A8ADF127FBE7310047ABDD /* SummaryViewController.swift */,
+				4659C92A27FE04A50087BF17 /* ReportTableViewCell.swift */,
+				4659C92B27FE04A50087BF17 /* ReportTableViewCell.xib */,
+				4659C92F27FE7C1F0087BF17 /* ProjectCompletionTableViewCell.swift */,
+				4659C93027FE7C1F0087BF17 /* ProjectCompletionTableViewCell.xib */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		4659C93327FF15F40087BF17 /* Progress History */ = {
+			isa = PBXGroup;
+			children = (
+				4659C93427FF16790087BF17 /* CompletionHistoryTableViewCell.swift */,
+				4659C93527FF16790087BF17 /* CompletionHistoryTableViewCell.xib */,
+				4659C93827FF1D7D0087BF17 /* ProgressHistoryViewController.swift */,
+				4659C93A27FF32520087BF17 /* EmptyHistoryTableViewCell.swift */,
+				4659C93B27FF32520087BF17 /* EmptyHistoryTableViewCell.xib */,
+			);
+			path = "Progress History";
+			sourceTree = "<group>";
+		};
 		46A8ADE127FBE7310047ABDD = {
 			isa = PBXGroup;
 			children = (
@@ -60,25 +98,16 @@
 		46A8ADEC27FBE7310047ABDD /* Mini Challenge GA */ = {
 			isa = PBXGroup;
 			children = (
-				46A8AE0127FBF7020047ABDD /* Models */,
+				4659C93327FF15F40087BF17 /* Progress History */,
+				4659C92E27FE7BE00087BF17 /* Summary */,
 				46A8ADED27FBE7310047ABDD /* AppDelegate.swift */,
 				46A8ADEF27FBE7310047ABDD /* SceneDelegate.swift */,
-				46A8ADF127FBE7310047ABDD /* SummaryViewController.swift */,
-				46B3176527FD024100DAF63E /* ProgressTableController.swift */,
 				46A8ADF327FBE7310047ABDD /* Main.storyboard */,
 				46A8ADF627FBE7320047ABDD /* Assets.xcassets */,
 				46A8ADF827FBE7320047ABDD /* LaunchScreen.storyboard */,
 				46A8ADFB27FBE7320047ABDD /* Info.plist */,
 			);
 			path = "Mini Challenge GA";
-			sourceTree = "<group>";
-		};
-		46A8AE0127FBF7020047ABDD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				46A8AE0427FBF7680047ABDD /* Progress.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +168,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4659C93727FF16790087BF17 /* CompletionHistoryTableViewCell.xib in Resources */,
 				46A8ADFA27FBE7320047ABDD /* LaunchScreen.storyboard in Resources */,
+				4659C93D27FF32520087BF17 /* EmptyHistoryTableViewCell.xib in Resources */,
+				4659C93227FE7C1F0087BF17 /* ProjectCompletionTableViewCell.xib in Resources */,
 				46A8ADF727FBE7320047ABDD /* Assets.xcassets in Resources */,
 				46A8ADF527FBE7310047ABDD /* Main.storyboard in Resources */,
+				4659C92D27FE04A50087BF17 /* ReportTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,11 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46B3176627FD024100DAF63E /* ProgressTableController.swift in Sources */,
+				4659C93927FF1D7D0087BF17 /* ProgressHistoryViewController.swift in Sources */,
 				46A8ADF227FBE7310047ABDD /* SummaryViewController.swift in Sources */,
 				46A8ADEE27FBE7310047ABDD /* AppDelegate.swift in Sources */,
-				46A8AE0527FBF7680047ABDD /* Progress.swift in Sources */,
+				4659C92C27FE04A50087BF17 /* ReportTableViewCell.swift in Sources */,
 				46A8ADF027FBE7310047ABDD /* SceneDelegate.swift in Sources */,
+				4659C93627FF16790087BF17 /* CompletionHistoryTableViewCell.swift in Sources */,
+				4659C93C27FF32520087BF17 /* EmptyHistoryTableViewCell.swift in Sources */,
+				4659C93127FE7C1F0087BF17 /* ProjectCompletionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NLM7SY7FHH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini Challenge GA/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -330,6 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NLM7SY7FHH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini Challenge GA/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
