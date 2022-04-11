@@ -15,6 +15,7 @@ class ProjectCompletionTableViewCell: UITableViewCell {
     @IBOutlet var notStartedTask: UILabel!
     @IBOutlet var inProgressTask: UILabel!
     @IBOutlet var doneTask: UILabel!
+    @IBOutlet var progressBar: ProgressBar!
     
     static let identifier = "ProjectCompletionTableViewCell"
     
@@ -23,15 +24,19 @@ class ProjectCompletionTableViewCell: UITableViewCell {
         return UINib(nibName: "ProjectCompletionTableViewCell", bundle: nil)
     }
     
-    public func configure(categorySymbolName: String, category: String, notStarted: Int, inProgress: Int, done: Int) {
+    public func configure(categorySymbolName: String, category: String, notStarted: Int, inProgress: Int, done: Int, percentage: Double) {
         categorySymbol.image = UIImage(systemName: categorySymbolName)?.withTintColor(.black, renderingMode: .alwaysOriginal)
         categoryName.text = category
         notStartedTask.text = String(notStarted)
         inProgressTask.text = String(inProgress)
         doneTask.text = String(done)
         Card.layer.cornerRadius = 29
+        
+        var progressVal = Double(percentage)
+        // print(progressVal)
+        self.progressBar.progress = CGFloat(progressVal/100)
+       
         //Card.layer.masksToBounds = true
-        //notStarted
     }
     
     override func awakeFromNib() {

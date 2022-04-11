@@ -26,6 +26,8 @@
 		4659C9512801E1220087BF17 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659C9502801E1220087BF17 /* TaskTableViewCell.swift */; };
 		466E26722803437400721889 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E26712803437400721889 /* AddTaskViewController.swift */; };
 		466E2674280343BD00721889 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E2673280343BD00721889 /* EditTaskViewController.swift */; };
+		466E26762804A6CE00721889 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E26752804A6CE00721889 /* ProgressBar.swift */; };
+		466E26792804BBE100721889 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E26782804BBE100721889 /* TimerViewController.swift */; };
 		46A8ADEE27FBE7310047ABDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8ADED27FBE7310047ABDD /* AppDelegate.swift */; };
 		46A8ADF027FBE7310047ABDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8ADEF27FBE7310047ABDD /* SceneDelegate.swift */; };
 		46A8ADF227FBE7310047ABDD /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A8ADF127FBE7310047ABDD /* SummaryViewController.swift */; };
@@ -54,6 +56,8 @@
 		4659C9502801E1220087BF17 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		466E26712803437400721889 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		466E2673280343BD00721889 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
+		466E26752804A6CE00721889 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		466E26782804BBE100721889 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		46A8ADEA27FBE7310047ABDD /* Mini Challenge GA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Challenge GA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A8ADED27FBE7310047ABDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46A8ADEF27FBE7310047ABDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 				4659C92B27FE04A50087BF17 /* ReportTableViewCell.xib */,
 				4659C92F27FE7C1F0087BF17 /* ProjectCompletionTableViewCell.swift */,
 				4659C93027FE7C1F0087BF17 /* ProjectCompletionTableViewCell.xib */,
+				466E26752804A6CE00721889 /* ProgressBar.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -123,6 +128,14 @@
 			path = Task;
 			sourceTree = "<group>";
 		};
+		466E26772804BBBD00721889 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				466E26782804BBE100721889 /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		46A8ADE127FBE7310047ABDD = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 		46A8ADEC27FBE7310047ABDD /* Mini Challenge GA */ = {
 			isa = PBXGroup;
 			children = (
+				466E26772804BBBD00721889 /* Timer */,
 				4659C94D2801CEE80087BF17 /* Task */,
 				4659C93E28017AC10087BF17 /* Model */,
 				4659C93327FF15F40087BF17 /* Progress History */,
@@ -231,7 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				466E26792804BBE100721889 /* TimerViewController.swift in Sources */,
 				4659C94428017B480087BF17 /* Report.swift in Sources */,
+				466E26762804A6CE00721889 /* ProgressBar.swift in Sources */,
 				466E2674280343BD00721889 /* EditTaskViewController.swift in Sources */,
 				4659C93927FF1D7D0087BF17 /* ProgressHistoryViewController.swift in Sources */,
 				4659C94F2801CF2F0087BF17 /* TaskViewController.swift in Sources */,

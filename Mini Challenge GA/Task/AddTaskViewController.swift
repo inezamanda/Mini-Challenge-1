@@ -7,24 +7,38 @@
 
 import UIKit
 
+protocol AddTaskControllerDelegate {
+    func onSave()
+}
+
 class AddTaskViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var viewDelegate: AddTaskControllerDelegate?
     
     let category = ["Book", "Implementation"]
     @IBOutlet weak var newTaskTextField: UITextField!
     @IBOutlet weak var selectCategoryTextField: UITextField!
+    @IBOutlet weak var doneUIBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var cancelUIBarButtonItem: UIBarButtonItem!
     
+    @IBAction func onSave(_ sender: Any) {
+        //print("save")
+        
+        listTask.append(Task(name: newTaskTextField.text!, status: "not started", category: selectCategoryTextField.text!))
+        viewDelegate?.onSave()
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapCancelBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     let pickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .secondarySystemBackground
-    
-        let cancelUIBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(didTapCancelBtn))
-        self.navigationItem.leftBarButtonItem  = cancelUIBarButtonItem
-        
-        let doneUIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(didTapDoneBtn))
-        self.navigationItem.rightBarButtonItem  = doneUIBarButtonItem
         
         newTaskTextField.returnKeyType = .done
         newTaskTextField.becomeFirstResponder()
@@ -36,14 +50,10 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate, UIPickerView
         pickerView.dataSource = self
     }
     
-    @objc private func didTapCancelBtn(){
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @objc private func didTapDoneBtn(){
-        // Add user input to tableview
-        print("save")
-        dismiss(animated: true, completion: nil)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        onSave(self)
+        
+        return true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -63,3 +73,4 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate, UIPickerView
         selectCategoryTextField.resignFirstResponder()
     }
 }
+

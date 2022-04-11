@@ -25,8 +25,8 @@ class SummaryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let section2 = SectionData(
             name: "Final Project Completion",
             data: [
-                FinalProjectCompletion(category: "Book Progress", notStarted: 3, inProgress: 2, done: 5, percentage: 50, emoji: "books.vertical.fill"),
-                FinalProjectCompletion(category: "Implementation", notStarted: 3, inProgress: 2, done: 5, percentage: 50, emoji: "hammer.fill")
+                FinalProjectCompletion(category: "Book", notStarted: 3, inProgress: 2, done: 5, percentage: 50.0, emoji: "books.vertical.fill"),
+                FinalProjectCompletion(category: "Implementation", notStarted: 3, inProgress: 2, done: 5, percentage: 50.0, emoji: "hammer.fill")
             ]
         )
         
@@ -107,7 +107,7 @@ class SummaryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: ProjectCompletionTableViewCell.identifier, for: indexPath) as! ProjectCompletionTableViewCell
         if let thisCell = elem as? FinalProjectCompletion {
-            cell.configure(categorySymbolName: thisCell.emoji, category: thisCell.category, notStarted: thisCell.notStarted, inProgress: thisCell.inProgress, done: thisCell.done)
+            cell.configure(categorySymbolName: thisCell.emoji, category: thisCell.category, notStarted: thisCell.notStarted, inProgress: thisCell.inProgress, done: thisCell.done, percentage: thisCell.percentage)
             cell.selectedBackgroundView = backgroundView
         }
         return cell
@@ -122,7 +122,7 @@ class SummaryViewController: UIViewController, UITableViewDelegate, UITableViewD
         else {
             if let thisCell = elem as? FinalProjectCompletion {
                 
-                if thisCell.category == "Book Progress" {
+                if thisCell.category == "Book" {
                     selectedCategory = 1
                 } else if thisCell.category == "Implementation" {
                     selectedCategory = 2

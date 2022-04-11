@@ -11,9 +11,9 @@ struct DailyProgress {
     var date: String
     var inProgress: Int
     var done: Int
-    var percentage: Int
+    var percentage: Double
 
-    init(date: String, inProgress: Int, done: Int, percentage: Int){
+    init(date: String, inProgress: Int, done: Int, percentage: Double){
         self.date = date
         self.inProgress = inProgress
         self.done = done

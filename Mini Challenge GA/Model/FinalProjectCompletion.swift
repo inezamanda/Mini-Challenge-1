@@ -13,9 +13,9 @@ struct FinalProjectCompletion: DataProtocol{
     var notStarted: Int
     var inProgress: Int
     var done: Int
-    var percentage: Int
+    var percentage: Double
 
-    init(category: String, notStarted: Int, inProgress: Int, done: Int, percentage: Int, emoji: String){
+    init(category: String, notStarted: Int, inProgress: Int, done: Int, percentage: Double, emoji: String){
         self.category = category
         self.notStarted = notStarted
         self.inProgress = inProgress

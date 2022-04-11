@@ -12,8 +12,8 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet var tableView: UITableView!
     
     var weeklyProgress = [
-        DailyProgress(date: "Thu, 24 Mar 2022", inProgress: 2, done: 5, percentage: 50),
-        DailyProgress(date: "Thu, 24 Mar 2022", inProgress: 2, done: 5, percentage: 50)
+        DailyProgress(date: "Thu, 24 Mar 2022", inProgress: 2, done: 5, percentage: 75.0),
+        DailyProgress(date: "Thu, 24 Mar 2022", inProgress: 2, done: 5, percentage: 50.0)
     ]
 
     lazy var data: [TimeSection] = {
@@ -107,7 +107,7 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
         
         let cellDetail = data[indexPath.section].data[indexPath.row]
         print(cellDetail)
-        cell.configure(date: cellDetail.date, inProgress: cellDetail.inProgress, done: cellDetail.done)
+        cell.configure(date: cellDetail.date, inProgress: cellDetail.inProgress, done: cellDetail.done, percentage: cellDetail.percentage)
         return cell
     }
     
@@ -115,8 +115,20 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
 
 extension ProgressHistoryViewController: EmptyHistoryTableViewCellDelegate {
     func didTapButton() {
-        print("clickkk")
-        // performSegue(withIdentifier: "taskSeg", sender: self)
+        let summary = SummaryViewController()
+        let timer = TimerViewController()
+        
+        let timerVC = self.storyboard?.instantiateViewController(withIdentifier: "TimerViewController") as? TimerViewController
+    
+        //self.navigationController?.pushViewController(Timer, animated: true)
+        
+        timer.tabBarController?.viewControllers = [summary, timer]
+        //timerSc = [summary, timer]
+        
+        view.window?.makeKeyAndVisible()
+        print("clickkk 2")
+        view.window?.rootViewController = timer
+        print("clickkk 2")
     }
 }
 

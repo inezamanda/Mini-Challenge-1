@@ -14,9 +14,9 @@ struct Task {
 }
 
 var listTask: [Task] = [
-    Task(name: "Identify problems", status: "done", category: "Book Progress"),
-    Task(name: "Identify problems 2", status: "not started", category: "Book Progress"),
-    Task(name: "Identify problems 3", status: "in progress", category: "Book Progress"),
+    Task(name: "Identify problems", status: "done", category: "Book"),
+    Task(name: "Identify problems 2", status: "not started", category: "Book"),
+    Task(name: "Identify problems 3", status: "in progress", category: "Book"),
     Task(name: "Identify problems 4", status: "not started", category: "Implementation"),
     Task(name: "Identify problems 5", status: "not started", category: "Implementation"),
     Task(name: "Identify problems 6", status: "in progress", category: "Implementation"),
@@ -30,13 +30,12 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     
-    
     lazy var rowToDisplay = listTask
     
     @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            rowToDisplay = listTask.filter { $0.category == "Book Progress"}
+            rowToDisplay = listTask.filter { $0.category == "Book"}
         case 1:
             rowToDisplay = listTask.filter { $0.category == "Implementation"}
         default:
@@ -47,10 +46,18 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func addTaskAction(_ sender: Any) {
+        didTapAddBtn()
+    }
+    
+    @objc private func didTapAddBtn(){
+        let vc = AddTaskViewController()
+        vc.viewDelegate = self
+        print("disini")
         performSegue(withIdentifier: "addTaskSeg", sender: self)
     }
     
     @objc private func didTapEditBtn(){
+        print("klo ini")
         performSegue(withIdentifier: "editTaskSeg", sender: self)
     }
     
@@ -60,7 +67,7 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if selectedCategory == 1 {
             segmentedControl.selectedSegmentIndex = 0
-            rowToDisplay = listTask.filter { $0.category == "Book Progress"}
+            rowToDisplay = listTask.filter { $0.category == "Book"}
         } else {
             segmentedControl.selectedSegmentIndex = 1
             rowToDisplay = listTask.filter { $0.category == "Implementation"}
@@ -68,6 +75,9 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.reloadData()
+        
+        //print(listTask)
     }
     
     
@@ -95,7 +105,7 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(rowToDisplay)
+        print(rowToDisplay[indexPath.row])
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskTableViewCell", for: indexPath) as! TaskTableViewCell
         
@@ -115,7 +125,7 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             cell.accessoryView = nil
         }
-
+        
         return cell
     }
     
@@ -154,3 +164,9 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 }
 
+extension TaskViewController: AddTaskControllerDelegate {
+    func onSave() {
+        tableView.reloadData()
+        print("masokk")
+    }
+}

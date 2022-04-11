@@ -21,6 +21,11 @@
                         <rect key="frame" x="16" y="2" width="358" height="101"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hw-EC-7Fl" customClass="ProgressBar" customModule="Mini_Challenge_GA" customModuleProvider="target">
+                                <rect key="frame" x="259" y="14" width="83" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJi-5O-p9L">
                                 <rect key="frame" x="21" y="14" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,6 +94,7 @@
                 <outlet property="doneTask" destination="j7R-e8-vbV" id="fjb-DC-gnL"/>
                 <outlet property="inProgressTask" destination="9cB-fq-cWC" id="2ae-4n-iRg"/>
                 <outlet property="notStartedTask" destination="ee8-qu-7lS" id="PJc-Ja-FVY"/>
+                <outlet property="progressBar" destination="2hw-EC-7Fl" id="qal-N6-R4G"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="126.22767857142857"/>
         </tableViewCell>

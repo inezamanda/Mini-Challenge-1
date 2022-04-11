@@ -13,6 +13,7 @@ class CompletionHistoryTableViewCell: UITableViewCell {
     @IBOutlet var inProgressTask: UILabel!
     @IBOutlet var doneTask: UILabel!
     @IBOutlet var card: UIView!
+    @IBOutlet var progressBar: ProgressBar!
     
     static let identifier = "CompletionHistoryTableViewCell"
     
@@ -20,11 +21,15 @@ class CompletionHistoryTableViewCell: UITableViewCell {
         return UINib(nibName: "CompletionHistoryTableViewCell", bundle: nil)
     }
     
-    public func configure(date: String, inProgress: Int, done: Int) {
+    public func configure(date: String, inProgress: Int, done: Int, percentage: Double) {
         progressDate.text = date
         inProgressTask.text = String(inProgress)
         doneTask.text = String(done)
         card.layer.cornerRadius = 29
+        
+        var progressVal = Double(percentage)
+        print(progressVal)
+        progressBar.progress = CGFloat(progressVal/100)
     }
     
     override func awakeFromNib() {

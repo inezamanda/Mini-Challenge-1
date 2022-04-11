@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7S-Z1-6l1">
-                                <rect key="frame" x="21" y="16" width="169" height="21"/>
+                                <rect key="frame" x="21" y="16" width="200" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -56,6 +56,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfk-QU-Yso" customClass="ProgressBar" customModule="Mini_Challenge_GA" customModuleProvider="target">
+                                <rect key="frame" x="249" y="9" width="89" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -67,9 +72,10 @@
                 <outlet property="card" destination="Xab-Oq-6Lt" id="IdA-sy-igQ"/>
                 <outlet property="doneTask" destination="qTe-iz-tQ1" id="ncb-Dr-abP"/>
                 <outlet property="inProgressTask" destination="OZd-Xv-dWI" id="4wx-dz-6tu"/>
+                <outlet property="progressBar" destination="Kfk-QU-Yso" id="Fxb-3g-htZ"/>
                 <outlet property="progressDate" destination="t7S-Z1-6l1" id="fm9-qu-Hot"/>
             </connections>
-            <point key="canvasLocation" x="139" y="84"/>
+            <point key="canvasLocation" x="137.68115942028987" y="83.370535714285708"/>
         </tableViewCell>
     </objects>
     <resources>
