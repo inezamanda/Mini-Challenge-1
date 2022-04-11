@@ -7,44 +7,11 @@
 
 import UIKit
 
-class TimeSection {
-    var name: String
-    var data: [DailyProgress]
-    
-    var numberOfItems: Int {
-        return data.count
-    }
-    
-    subscript(index: Int) -> DailyProgress {
-        return data[index]
-    }
-    
-    init(name: String, data: [DailyProgress]){
-        self.name = name
-        self.data = data
-    }
-}
-
-struct DailyProgress {
-    var date: String
-    var inProgress: Int
-    var done: Int
-    var percentage: Int
-
-    init(date: String, inProgress: Int, done: Int, percentage: Int){
-        self.date = date
-        self.inProgress = inProgress
-        self.done = done
-        self.percentage = percentage
-    }
-    
-}
-
 class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     
-    var dailyProgress = [
+    var weeklyProgress = [
         DailyProgress(date: "Thu, 24 Mar 2022", inProgress: 2, done: 5, percentage: 50),
         DailyProgress(date: "Thu, 24 Mar 2022", inProgress: 2, done: 5, percentage: 50)
     ]
@@ -56,12 +23,12 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
         
         let section2 = TimeSection(
             name: "Last Week",
-            data: dailyProgress
+            data: weeklyProgress
         )
         
         let section3 = TimeSection(
             name: "Earlier",
-            data: dailyProgress
+            data: weeklyProgress
         )
         
         return [section1, section2, section3]
@@ -88,7 +55,7 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
         //header.backgroundColor = .red
 
-        let label = UILabel(frame: CGRect(x: 0, y: 0,
+        let label = UILabel(frame: CGRect(x: 16, y: 0,
                                           width: header.frame.size.width - 15,
                                           height: header.frame.size.height - 10))
 
@@ -112,7 +79,6 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         if (data[indexPath.section].name == "This Week") {
             return 112
         }
@@ -129,9 +95,10 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
         
         // Empty Row State
         if data[indexPath.section].data.isEmpty {
-            let cell = tableView.dequeueReusableCell(withIdentifier: EmptyHistoryTableViewCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: EmptyHistoryTableViewCell.identifier, for: indexPath) as! EmptyHistoryTableViewCell
             cell.selectedBackgroundView = backgroundView
-            print("masuk")
+            cell.configure()
+            cell.delegate = self
             return cell
         }
         
@@ -144,6 +111,13 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
         return cell
     }
     
+}
+
+extension ProgressHistoryViewController: EmptyHistoryTableViewCellDelegate {
+    func didTapButton() {
+        print("clickkk")
+        // performSegue(withIdentifier: "taskSeg", sender: self)
+    }
 }
 
 

@@ -24,7 +24,7 @@ class ReportTableViewCell: UITableViewCell {
     public func configure(timeProgress: String, duration: String, encourage: String, imageName: String) {
         emojiImageView.image = UIImage(named: imageName)
         time.text = timeProgress
-        durationTarget.text = duration
+        durationTarget.text = "out of \(duration)"
         words.text = encourage
         reportCard.layer.cornerRadius = 29
     }

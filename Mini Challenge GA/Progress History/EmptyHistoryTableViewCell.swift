@@ -7,15 +7,29 @@
 
 import UIKit
 
+protocol EmptyHistoryTableViewCellDelegate: AnyObject {
+    func didTapButton()
+}
 class EmptyHistoryTableViewCell: UITableViewCell {
-
-    @IBAction func startProgressButton(_ sender: Any) {
-    }
+    
+    weak var delegate: EmptyHistoryTableViewCellDelegate?
     
     static let identifier = "EmptyHistoryTableViewCell"
+   
+    @IBOutlet var button: UIButton!
+    
+    @IBAction private func didTapButton(){
+        delegate?.didTapButton()
+    }
+    
+    private var title: String = ""
     
     static func nib() -> UINib {
         return UINib(nibName: "EmptyHistoryTableViewCell", bundle: nil)
+    }
+    
+    func configure() {
+        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
     }
     
     override func awakeFromNib() {
@@ -28,5 +42,5 @@ class EmptyHistoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }
