@@ -8,7 +8,7 @@
 import UIKit
 
 class TaskTableViewCell: UITableViewCell {
-
+    
+    static let identifier = "taskTableViewCell"
     @IBOutlet weak var taskLabel: UILabel!
-
 }

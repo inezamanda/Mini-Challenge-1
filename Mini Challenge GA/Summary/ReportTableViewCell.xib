@@ -21,10 +21,10 @@
                         <rect key="frame" x="16" y="0.0" width="358" height="196"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LsT-gH-VSD">
-                                <rect key="frame" x="238" y="48" width="100" height="100"/>
+                                <rect key="frame" x="188" y="23" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="XgU-1E-bcQ"/>
-                                    <constraint firstAttribute="height" constant="100" id="i59-Wo-bBK"/>
+                                    <constraint firstAttribute="height" constant="150" id="bAW-D6-yQi"/>
+                                    <constraint firstAttribute="width" constant="150" id="iuw-fQ-hmO"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xQ-WA-noo">
@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well done! You have reached your weekly duration target!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cr6-Fe-eLz">
-                                <rect key="frame" x="21" y="127" width="171" height="26.5"/>
+                                <rect key="frame" x="21" y="127" width="159" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                             <constraint firstItem="6jg-jg-tPa" firstAttribute="top" secondItem="0xQ-WA-noo" secondAttribute="bottom" constant="4" id="Qq7-19-Vl1"/>
                             <constraint firstItem="Cr6-Fe-eLz" firstAttribute="top" secondItem="EHY-sD-BAU" secondAttribute="bottom" constant="10" id="R4B-hX-Sci"/>
                             <constraint firstAttribute="trailing" secondItem="LsT-gH-VSD" secondAttribute="trailing" constant="20" symbolic="YES" id="Ylo-G5-gwq"/>
-                            <constraint firstItem="LsT-gH-VSD" firstAttribute="leading" secondItem="Cr6-Fe-eLz" secondAttribute="trailing" constant="46" id="dSb-JC-KIG"/>
+                            <constraint firstItem="LsT-gH-VSD" firstAttribute="leading" secondItem="Cr6-Fe-eLz" secondAttribute="trailing" constant="8" symbolic="YES" id="pkO-3a-JdD"/>
                             <constraint firstItem="EHY-sD-BAU" firstAttribute="leading" secondItem="AWW-2K-1CY" secondAttribute="leading" constant="21" id="tHR-bs-yXd"/>
                             <constraint firstItem="0xQ-WA-noo" firstAttribute="leading" secondItem="AWW-2K-1CY" secondAttribute="leading" constant="21" id="uOs-Yr-DJC"/>
                             <constraint firstItem="6jg-jg-tPa" firstAttribute="leading" secondItem="AWW-2K-1CY" secondAttribute="leading" constant="21" id="uZr-Y8-BJh"/>

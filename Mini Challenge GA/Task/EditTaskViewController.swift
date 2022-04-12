@@ -14,6 +14,8 @@ class EditTaskViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     
+    var taskName: String?
+    var taskCategory: String?
     let pickerView = UIPickerView()
     
     override func viewDidLoad() {
@@ -21,29 +23,24 @@ class EditTaskViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         view.backgroundColor = .secondarySystemBackground
     
-        let cancelUIBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(didTapCancelBtn))
-        self.navigationItem.leftBarButtonItem  = cancelUIBarButtonItem
-        
-        let doneUIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(didTapDoneBtn))
-        self.navigationItem.rightBarButtonItem  = doneUIBarButtonItem
-        
         taskTextField.returnKeyType = .done
         taskTextField.becomeFirstResponder()
+        taskTextField.text = taskName
         taskTextField.delegate = self
         
         categoryTextField.inputView = pickerView
-        
+        categoryTextField.text = taskCategory
         pickerView.delegate = self
         pickerView.dataSource = self
     }
     
-    @objc private func didTapCancelBtn(){
+    @IBAction func onSave(_ sender: Any) {
+        print("save")
         dismiss(animated: true, completion: nil)
     }
     
-    @objc private func didTapDoneBtn(){
-        // Add user input to tableview
-        print("save")
+    
+    @IBAction func didTapCancelBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
@@ -60,7 +57,9 @@ class EditTaskViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoryTextField.text = category[row]
+        
+        taskCategory = category[row]
+        categoryTextField.text = taskCategory
         categoryTextField.resignFirstResponder()
     }
 }

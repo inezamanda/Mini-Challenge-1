@@ -11,9 +11,17 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet var tableView: UITableView!
     
-    var weeklyProgress = [
-        DailyProgress(date: "Thu, 24 Mar 2022", inProgress: 2, done: 5, percentage: 75.0),
-        DailyProgress(date: "Thu, 24 Mar 2022", inProgress: 2, done: 5, percentage: 50.0)
+    var lastWeekProgress = [
+        DailyProgress(date: "Fri, 8 Apr 2022", inProgress: 2, done: 15, percentage: 70.0),
+        DailyProgress(date: "Tue, 5 Apr 2022", inProgress: 2, done: 11, percentage: 65.0)
+    ]
+    
+    var earlierProgress = [
+        DailyProgress(date: "Fri, 25 Mar 2022", inProgress: 2, done: 8, percentage: 60.0),
+        DailyProgress(date: "Thu, 24 Mar 2022", inProgress: 2, done: 6, percentage: 45.0),
+        DailyProgress(date: "Tue, 15 Mar 2022", inProgress: 1, done: 3, percentage: 30.0),
+        DailyProgress(date: "Mon, 14 Mar 2022", inProgress: 2, done: 1, percentage: 10.0)
+        
     ]
 
     lazy var data: [TimeSection] = {
@@ -23,12 +31,12 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
         
         let section2 = TimeSection(
             name: "Last Week",
-            data: weeklyProgress
+            data: lastWeekProgress
         )
         
         let section3 = TimeSection(
             name: "Earlier",
-            data: weeklyProgress
+            data: earlierProgress
         )
         
         return [section1, section2, section3]
@@ -115,20 +123,7 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
 
 extension ProgressHistoryViewController: EmptyHistoryTableViewCellDelegate {
     func didTapButton() {
-        let summary = SummaryViewController()
-        let timer = TimerViewController()
-        
-        let timerVC = self.storyboard?.instantiateViewController(withIdentifier: "TimerViewController") as? TimerViewController
-    
-        //self.navigationController?.pushViewController(Timer, animated: true)
-        
-        timer.tabBarController?.viewControllers = [summary, timer]
-        //timerSc = [summary, timer]
-        
-        view.window?.makeKeyAndVisible()
-        print("clickkk 2")
-        view.window?.rootViewController = timer
-        print("clickkk 2")
+        self.performSegue(withIdentifier: "progToTimerSeg", sender: self)
     }
 }
 

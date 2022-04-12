@@ -14,12 +14,19 @@ struct Task {
 }
 
 var listTask: [Task] = [
-    Task(name: "Identify problems", status: "done", category: "Book"),
-    Task(name: "Identify problems 2", status: "not started", category: "Book"),
-    Task(name: "Identify problems 3", status: "in progress", category: "Book"),
-    Task(name: "Identify problems 4", status: "not started", category: "Implementation"),
-    Task(name: "Identify problems 5", status: "not started", category: "Implementation"),
-    Task(name: "Identify problems 6", status: "in progress", category: "Implementation"),
+    Task(name: "Bab 1", status: "done", category: "Book"),
+    Task(name: "Bab 2", status: "done", category: "Book"),
+    Task(name: "Bab 3", status: "done", category: "Book"),
+    Task(name: "Bab 4", status: "in progress", category: "Book"),
+    Task(name: "Bab 5", status: "not started", category: "Book"),
+    Task(name: "Bab 6", status: "not started", category: "Book"),
+    Task(name: "Developing Website", status: "done", category: "Implementation"),
+    Task(name: "Built frontend page", status: "done", category: "Implementation"),
+    Task(name: "Connecting to backend", status: "in progress", category: "Implementation"),
+    Task(name: "Create Restful API", status: "done", category: "Implementation"),
+    Task(name: "Designing hardware", status: "not started", category: "Implementation"),
+    Task(name: "Desk research", status: "done", category: "Implementation"),
+    Task(name: "Form survey", status: "done", category: "Implementation"),
 ]
 
 class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -52,12 +59,18 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @objc private func didTapAddBtn(){
         let vc = AddTaskViewController()
         vc.viewDelegate = self
-        print("disini")
         performSegue(withIdentifier: "addTaskSeg", sender: self)
     }
     
     @objc private func didTapEditBtn(){
-        print("klo ini")
+        let vc = EditTaskViewController()
+    
+        if let indexPath = tableView.indexPathForSelectedRow {
+            print(rowToDisplay[indexPath.row].name)
+            vc.taskName = rowToDisplay[indexPath.row].name
+            print(vc.taskName)
+            vc.taskCategory = rowToDisplay[indexPath.row].category
+        }
         performSegue(withIdentifier: "editTaskSeg", sender: self)
     }
     
@@ -77,9 +90,12 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.reloadData()
         
-        //print(listTask)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
@@ -105,26 +121,25 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(rowToDisplay[indexPath.row])
+        //print(rowToDisplay[indexPath.row])
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskTableViewCell", for: indexPath) as! TaskTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
         
         cell.taskLabel.text = rowToDisplay[indexPath.row].name
         let taskStatus = rowToDisplay[indexPath.row].status
         
+        let statusIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        
         if taskStatus == "done" {
-            let doneIcon = UIImage(systemName: "checkmark")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
-            let doneIconView = UIImageView(image: doneIcon)
-            doneIconView.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
-            cell.accessoryView = doneIconView
+            statusIcon.image = UIImage(systemName: "checkmark.circle")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
         } else if taskStatus == "in progress" {
-            let progressIcon = UIImage(systemName: "arrow.triangle.2.circlepath")?.withTintColor(.blue, renderingMode: .alwaysOriginal)
-            let progressIconView = UIImageView(image: progressIcon)
-            progressIconView.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
-            cell.accessoryView = progressIconView
+            statusIcon.image = UIImage(systemName: "circle.dashed")?.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
         } else {
-            cell.accessoryView = nil
+            statusIcon.image = UIImage(systemName: "circle")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
         }
+        
+        statusIcon.contentMode = .scaleAspectFit
+        cell.accessoryView = statusIcon
         
         return cell
     }
@@ -144,10 +159,13 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") {[weak self] (_, _, _) in
+            
             guard let self = self else {return}
+            print(self.rowToDisplay[indexPath.row])
+            let ind = listTask.firstIndex(where: { $0.name == self.rowToDisplay[indexPath.row].name})
+            listTask.remove(at: ind!)
             self.rowToDisplay.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            listTask.remove(at: indexPath.row)
             self.tableView.reloadData()
         }
         action.image = UIImage(systemName: "trash.fill")?.withTintColor(.systemBackground, renderingMode: .alwaysOriginal)
@@ -166,7 +184,8 @@ class TaskViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 extension TaskViewController: AddTaskControllerDelegate {
     func onSave() {
-        tableView.reloadData()
         print("masokk")
+        tableView.reloadData()
+        
     }
 }

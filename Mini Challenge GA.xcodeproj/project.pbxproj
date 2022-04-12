@@ -34,6 +34,8 @@
 		46A8ADF527FBE7310047ABDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A8ADF327FBE7310047ABDD /* Main.storyboard */; };
 		46A8ADF727FBE7320047ABDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46A8ADF627FBE7320047ABDD /* Assets.xcassets */; };
 		46A8ADFA27FBE7320047ABDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A8ADF827FBE7320047ABDD /* LaunchScreen.storyboard */; };
+		46B462A42805917F00BA43EE /* ChooseProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B462A32805917F00BA43EE /* ChooseProgressViewController.swift */; };
+		46B462A62805919A00BA43EE /* ChooseProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B462A52805919A00BA43EE /* ChooseProgressTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		46A8ADF627FBE7320047ABDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46A8ADF927FBE7320047ABDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46A8ADFB27FBE7320047ABDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46B462A32805917F00BA43EE /* ChooseProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProgressViewController.swift; sourceTree = "<group>"; };
+		46B462A52805919A00BA43EE /* ChooseProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProgressTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				466E26782804BBE100721889 /* TimerViewController.swift */,
+				46B462A32805917F00BA43EE /* ChooseProgressViewController.swift */,
+				46B462A52805919A00BA43EE /* ChooseProgressTableViewCell.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				4659C94428017B480087BF17 /* Report.swift in Sources */,
 				466E26762804A6CE00721889 /* ProgressBar.swift in Sources */,
 				466E2674280343BD00721889 /* EditTaskViewController.swift in Sources */,
+				46B462A42805917F00BA43EE /* ChooseProgressViewController.swift in Sources */,
 				4659C93927FF1D7D0087BF17 /* ProgressHistoryViewController.swift in Sources */,
 				4659C94F2801CF2F0087BF17 /* TaskViewController.swift in Sources */,
 				4659C94828017C160087BF17 /* TimeSection.swift in Sources */,
@@ -263,6 +270,7 @@
 				466E26722803437400721889 /* AddTaskViewController.swift in Sources */,
 				4659C93C27FF32520087BF17 /* EmptyHistoryTableViewCell.swift in Sources */,
 				4659C93127FE7C1F0087BF17 /* ProjectCompletionTableViewCell.swift in Sources */,
+				46B462A62805919A00BA43EE /* ChooseProgressTableViewCell.swift in Sources */,
 				4659C94C28017CE20087BF17 /* DailyProgress.swift in Sources */,
 				4659C94628017B780087BF17 /* SectionData.swift in Sources */,
 			);

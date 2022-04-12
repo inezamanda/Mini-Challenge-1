@@ -20,6 +20,7 @@ class EmptyHistoryTableViewCell: UITableViewCell {
     
     @IBAction private func didTapButton(){
         delegate?.didTapButton()
+        
     }
     
     private var title: String = ""

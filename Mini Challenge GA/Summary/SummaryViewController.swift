@@ -18,15 +18,15 @@ class SummaryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let section1 = SectionData(
             name: "My Progress",
             data: [
-                Report(time: "9h 20m", durationTarget: "10h 0m", words: "Well done! You have reached your weekly duration target!", emoji: "images")
+                Report(time: "9h 20m", durationTarget: "9h 0m", words: "Well done! You have reached your weekly duration target!", emoji: "Image 2")
             ]
         )
         
         let section2 = SectionData(
             name: "Final Project Completion",
             data: [
-                FinalProjectCompletion(category: "Book", notStarted: 3, inProgress: 2, done: 5, percentage: 50.0, emoji: "books.vertical.fill"),
-                FinalProjectCompletion(category: "Implementation", notStarted: 3, inProgress: 2, done: 5, percentage: 50.0, emoji: "hammer.fill")
+                FinalProjectCompletion(category: "Book", notStarted: listTask.filter { $0.category == "Book"}.filter{ $0.status == "not started" }.count, inProgress: listTask.filter { $0.category == "Book"}.filter{ $0.status == "in progress" }.count, done: listTask.filter { $0.category == "Book"}.filter{ $0.status == "done" }.count, percentage: 0.0, emoji: "books.vertical.fill"),
+                FinalProjectCompletion(category: "Implementation", notStarted: listTask.filter { $0.category == "Implementation"}.filter{ $0.status == "not started" }.count, inProgress: listTask.filter { $0.category == "Implementation"}.filter{ $0.status == "in progress" }.count, done: listTask.filter { $0.category == "Implementation"}.filter{ $0.status == "done" }.count, percentage: 0.0, emoji: "hammer.fill")
             ]
         )
         
@@ -92,7 +92,6 @@ class SummaryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let elem = data[indexPath.section].data[indexPath.row]
         //print(cellDetail)
-
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.clear
         
@@ -106,7 +105,10 @@ class SummaryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: ProjectCompletionTableViewCell.identifier, for: indexPath) as! ProjectCompletionTableViewCell
-        if let thisCell = elem as? FinalProjectCompletion {
+        if var thisCell = elem as? FinalProjectCompletion {
+            let finalPercentage: Double = (Double(thisCell.done) / (Double(thisCell.notStarted) + Double(thisCell.inProgress) + Double(thisCell.done))) * 100
+            thisCell.percentage = finalPercentage
+//            print(thisCell)
             cell.configure(categorySymbolName: thisCell.emoji, category: thisCell.category, notStarted: thisCell.notStarted, inProgress: thisCell.inProgress, done: thisCell.done, percentage: thisCell.percentage)
             cell.selectedBackgroundView = backgroundView
         }
@@ -132,6 +134,10 @@ class SummaryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 performSegue(withIdentifier: "taskSeg", sender: self)
             }
         }
+    }
+    
+    @IBAction func unwindToSummary(_ sender: UIStoryboardSegue) {
+        
     }
 }
 
